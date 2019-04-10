@@ -1,0 +1,62 @@
+
+1、没有响应的，带参数跳转，单向连接
+主activity
+    Intent intent=new Intent();
+                intent.setClass(getBaseContext(),MoonActivity.class);
+                intent.putExtra("msg","你好，我来自地球");
+                startActivity(intent);
+子Activity
+ Intent intent=getIntent();
+        String message=intent.getStringExtra("msg");
+        TextView moon=findViewById(R.id.txt_moon);
+        moon.setText(message);
+2、有响应的跳转：双向连接
+
+主Activity:
+              Intent intent=new Intent();
+                intent.setClass(getBaseContext(),MarsActivity.class);
+                intent.putExtra("msg","你好，我来自地球");
+                startActivityForResult(intent,101);
+————————————————————————————————
+ protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        Log.i("requestCode",String.valueOf(requestCode));
+        Log.i("resultCode",String.valueOf(resultCode));
+        String message;
+        switch (resultCode) {
+            case 202:
+                message = data.getStringExtra("ForMars");
+                txt_earth.setText(message);
+                break;
+            case 303:
+                message = data.getStringExtra("ForMoon");
+                txt_earth.setText(message);
+                break;
+        }
+       }
+
+
+子Activity:
+
+      View.OnClickListener ClickEarth=new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent();
+                intent.setClass(getBaseContext(),EarthActivity.class);
+                intent.putExtra("ForMars","我是水星");
+                setResult(202,intent);
+                finish();
+            }
+        };
+
+        findViewById(R.id.btn_earth).setOnClickListener(ClickEarth);
+
+
+1、startActivity(intent); 在主activity中使用实现简单的无响应的跳转
+2、startActivityForResult(intent,101);在主activity中使用实现有响应的跳转
+3、setResult(202,intent); finish();   在子Activity中使用，实现响应跳转的
+4、onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//根据resultCode,不同，得到不同子Activity的响应
+} 
+
+从子activity回到父activity时，ActivityManager会调用父activity的onActivityResult, 方法接收三个参数：第一个为父activity中定义的原始请求代码，第二个参数的子activitysetRresult()方法结果代码和intent
