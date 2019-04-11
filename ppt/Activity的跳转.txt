@@ -60,3 +60,5 @@
 } 
 
 从子activity回到父activity时，ActivityManager会调用父activity的onActivityResult, 方法接收三个参数：第一个为父activity中定义的原始请求代码，第二个参数的子activitysetRresult()方法结果代码和intent
+四个状态
+七个方法
