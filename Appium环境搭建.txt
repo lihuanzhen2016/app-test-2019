@@ -1,0 +1,16 @@
+1、appium-server 安装 
+https://github.com/appium/appium-desktop/releases 
+2、客户端
+https://mvnrepository.com/artifact/io.appium/java-client/7.0.0 
+https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.141.59
+commons-io-2.6.jar
+commons-lang3-3.8
+把四个jar包放在libs目录下右键 add  as library
+
+3、复制 代码两处
+https://github.com/appium/appium/blob/master/sample-code/java/src/AndroidCreateSessionTest.java
+修改 driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+File appDir = new File(classpathRoot+"/apps");
+4、启动模拟器
+保证是连接的
+adb devices查看
