@@ -1,0 +1,11 @@
+1、APP测试点：
+http://naotu.baidu.com/file/d1c760d9d4b88271677014e7544296ca?token=4f2d0d34a814dbfb
+2、Android系统基础
+http://naotu.baidu.com/file/d5e6d736b9f5d1e63e61474b63c08c38?token=7923e4b0bd80e8f6
+3、ADB
+http://naotu.baidu.com/file/c662e87098c598048d4af158acbe1a12?token=3e88bc0bcaef43cd
+4、APP开发
+http://naotu.baidu.com/file/18e1353996b2b603ebcc659203c9fc79?token=36479996dd153f36
+5、测试工具
+http://naotu.baidu.com/file/eacd741f1227fb4502b6b0c5d5d42261?token=22f19e6f47b003d2
+6、专项测试http://naotu.baidu.com/file/211505d6b271203f1962ce4357920168?token=c0931f9827af9683
